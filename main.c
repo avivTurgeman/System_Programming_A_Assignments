@@ -41,6 +41,6 @@ int main(){
             printf("%d ", tempX);
         }
         tempX++;
-    }
+    } 
     printf("\n");
 }
