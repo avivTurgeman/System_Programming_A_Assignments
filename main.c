@@ -8,37 +8,37 @@ int main(){
     tempX = x;
     tempY = y;
 
-    printf("The Armstrong numbers are: ");
+    printf("The Armstrong numbers are:");
     while(tempX <= tempY){
         if(isArmstrong(tempX) == 1){
-            printf("%d ", tempX);
+            printf(" %d", tempX);
         }
         tempX++;
     }
     tempX = x;
 
-    printf("\nThe Palindromes are: ");
+    printf("\nThe Palindromes are:");
     while(tempX <= tempY){
         if(isPalindrome(tempX) == 1){
-            printf("%d ", tempX);
+            printf(" %d", tempX);
         }
         tempX++;
     }
     tempX = x;
 
-    printf("\nThe Prime numbers are: ");
+    printf("\nThe Prime numbers are:");
     while(tempX <= tempY){
         if(isPrime(tempX) == 1){
-            printf("%d ", tempX);
+            printf(" %d", tempX);
         }
         tempX++;
     }
     tempX = x;
     
-    printf("\nThe Strong numbers are: ");
+    printf("\nThe Strong numbers are:");
     while(tempX <= tempY){
         if(isStrong(tempX) == 1){
-            printf("%d ", tempX);
+            printf(" %d", tempX);
         }
         tempX++;
     }
