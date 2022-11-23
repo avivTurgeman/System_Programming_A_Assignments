@@ -35,7 +35,7 @@ libclassrec.so: $(OBJECTS_RECURSION)
 mains: loops recursives
 	$(CC) $(FLAGS) -o mains $(OBJECTS_MAIN) $(OBJECTS_BASIC) $(OBJECTS_RECURSION) -lm
 
-maindloop: loopd
+maindloop: loopd 
 	$(CC) $(FLAGS) -o maindloop $(OBJECTS_MAIN) $(OBJECTS_BASIC) $(OBJECTS_LOOP) -lm
 
 maindrec: recursived
