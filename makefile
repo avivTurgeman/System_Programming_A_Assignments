@@ -42,13 +42,13 @@ maindrec: recursived
 	$(CC) $(FLAGS) -o maindrec $(OBJECTS_MAIN) $(OBJECTS_BASIC) $(OBJECTS_RECURSION) -lm
 
 basicClassification.o: basicClassification.c NumClass.h
-	$(CC) $(FLAGS) -c basicClassification.c -lm
+	$(CC) $(FLAGS) -fPIC -c basicClassification.c -lm
 
 advancedClassificationLoop.o: advancedClassificationLoop.c NumClass.h
-	$(CC) $(FLAGS) -c advancedClassificationLoop.c -lm
+	$(CC) $(FLAGS) -fPIC -c advancedClassificationLoop.c -lm
 
 advancedClassificationRecursion.o: advancedClassificationRecursion.c NumClass.h
-	$(CC) $(FLAGS) -c advancedClassificationRecursion.c -lm 
+	$(CC) $(FLAGS) -fPIC -c advancedClassificationRecursion.c -lm 
 
 main.o: main.c NumClass.h
 	$(CC) $(FLAGS) -c main.c -lm
