@@ -3,9 +3,8 @@
 
 int main(){
     int x,y,tempX,tempY;
-    if(scanf("%d %d", &x, &y) != 2){
-        return -1;
-    }
+    scanf("%d",&x);
+    scanf("%d",&y);
     tempX = x;
     tempY = y;
 
