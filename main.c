@@ -8,16 +8,19 @@ int main(){
 
     char selection;
     int flag = 1;
+    int executed = 1;
     while(1){
         scanf("%c", &selection);
         if(selection == 'A'){
             A(matrix);
         }
         if(selection == 'B'){
-            B(matrix);
+            B(matrix, executed);
+            executed = 0;
         }
         if(selection == 'C'){
-            C(matrix);
+            C(matrix,executed);
+            executed = 0;
         }
         if(selection == 'D'){
             break;
