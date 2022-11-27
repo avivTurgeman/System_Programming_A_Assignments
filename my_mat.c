@@ -41,10 +41,10 @@ int B(int matrix[10][10], int flag){
     }
 
     if(matrix[n][m]){
-        printf("True\n");
+        printf("True \n");
         return 1;
     }
-    printf("False\n");
+    printf("False \n");
     return 0;
 }
 
@@ -58,10 +58,10 @@ int C(int mat[10][10], int flag){
     }
 
     if(mat[n][m]){
-        printf("%d\n", mat[n][m]);
+        printf("%d \n", mat[n][m]);
         return 1;
     }
-    printf("%d\n", -1);
+    printf("%d \n", -1);
     return 0;
 }
 
