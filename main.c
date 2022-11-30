@@ -2,7 +2,7 @@
 #include "my_mat.h"
 
 
-int matrix[10][10];
+int matrix[10][10] = {0};
 
 int main(){
 
