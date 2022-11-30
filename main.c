@@ -13,6 +13,7 @@ int main(){
         scanf("%c", &selection);
         if(selection == 'A'){
             A(matrix);
+            executed = 1;
         }
         if(selection == 'B'){
             B(matrix, executed);
