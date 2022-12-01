@@ -36,7 +36,7 @@ int B(int matrix[10][10], int flag){
     scanf("%d", &n);
     scanf("%d", &m);
     
-    if(flag){
+    if(!flag){
         shortestPath(matrix);
     }
 
@@ -53,7 +53,7 @@ int C(int mat[10][10], int flag){
     scanf("%d", &n);
     scanf("%d", &m);
 
-    if(flag){
+    if(!flag){
         shortestPath(mat);
     }
 
@@ -61,6 +61,7 @@ int C(int mat[10][10], int flag){
         printf("%d\n", mat[n][m]);
         return 1;
     }
+    
     printf("%d\n", -1);
     return 0;
 }

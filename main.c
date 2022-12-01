@@ -6,33 +6,25 @@ int matrix[10][10] = {0};
 
 int main(){
 
-    char selection = "0";
-    int flag = 1;
-    int executed = 1;
+    char selection = '0';
+    int executed = 0;
     while(1){
         scanf("%c", &selection);
         if(selection == 'A'){
             A(matrix);
-            executed = 1;
+            executed = 0;
         }
         if(selection == 'B'){
             B(matrix, executed);
-            executed = 0;
+            executed = 1;
         }
         if(selection == 'C'){
             C(matrix,executed);
-            executed = 0;
+            executed = 1;
         }
         if(selection == 'D'){
             break;
         }
-        else{
-            flag = 0;
-            break;
-        }
     }
-    if(flag){
-        return 0;
-    }
-    return -1;
+    return 0;
 }
