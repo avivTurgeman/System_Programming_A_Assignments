@@ -61,8 +61,7 @@ int C(int mat[10][10], int flag){
         printf("%d\n", mat[n][m]);
         return 1;
     }
-    
+
     printf("%d\n", -1);
     return 0;
 }
-

@@ -25,6 +25,9 @@ int main(){
         if(selection == 'D'){
             break;
         }
+        if(selection != 'A' || selection != 'B' || selection != 'C' || selection != 'D'){
+            break;
+        }
     }
     return 0;
 }
