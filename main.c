@@ -6,7 +6,7 @@ int matrix[10][10] = {0};
 
 int main(){
 
-    char selection;
+    char selection = "0";
     int flag = 1;
     int executed = 1;
     while(1){
