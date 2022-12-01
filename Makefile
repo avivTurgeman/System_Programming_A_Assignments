@@ -5,16 +5,10 @@ LIB = my_mat.h
 OBJECT_MAT = my_mat.o
 OBJECTS_MAIN = main.o
 
-all: libclassmat.a libclassmat.so connections connectiond
+all: libclassmat.a connections
 
 connections: $(OBJECTS_MAIN) libclassmat.a
 	$(CC) $(FLAGS) -o $@ $^
-
-connectiond: $(OBJECTS_MAIN)
-	$(CC) $(FLAGS) -o $@ $^ ./libclassmat.so
-
-libclassmat.so: $(OBJECT_MAT)
-	$(CC) -shared -o $@ $^
 
 libclassmat.a: $(OBJECT_MAT)
 	$(AR) $@ $^
@@ -28,4 +22,4 @@ main.o: main.c $(LIB)
 .PHONY: clean all
 
 clean:
-	rm -f *.o *.a *.so connections connectiond
+	rm -f *.o *.a connections
