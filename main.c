@@ -1,13 +1,12 @@
 #include<stdio.h>
 #include "my_mat.h"
 
-
-// int matrix[10][10] = {{0, 3, 1, 0, 0, 2, 0, 0, 0, 0}, {3, 0, 1, 0, 0, 0, 0, 0, 0, 0}, {1, 1, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 5, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 4, 1, 1}, {2, 0, 0, 0, 0, 0, 2, 0, 0, 0}, {0, 0, 0, 0, 0, 2, 0, 0, 0, 0}, {0, 0, 0, 5, 4, 0, 0, 0, 0, 2}, {0, 0, 0, 0, 1, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 1, 0, 0, 2, 0, 0}};
-int matrix[10][10] = {0};
 int main(){
 
-    char selection = '0';
-    int executed = 0;
+    int matrix[10][10] = {0};
+
+    char selection;
+    int executed;
     while(1){
         scanf("%s", &selection);
         if(selection == 'A'){
@@ -26,7 +25,7 @@ int main(){
             break;
         }
         else if(selection != 'A' || selection != 'B' || selection != 'C' || selection != 'D'){
-            break;
+            return 1;
         }
     }
     return 0;
