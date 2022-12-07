@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include "my_mat.h"
+#define TRUE 1
 
 int main(){
 
@@ -7,7 +8,7 @@ int main(){
 
     char selection;
     int executed;
-    while(1){
+    while(TRUE){
         scanf("%s", &selection);
         if(selection == 'A'){
             A(matrix);
