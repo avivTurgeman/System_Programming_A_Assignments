@@ -7,7 +7,7 @@ int main(){
     int matrix[10][10] = {0};
 
     char selection;
-    int executed;
+    int executed; 
     while(TRUE){
         scanf("%s", &selection);
         if(selection == 'A'){

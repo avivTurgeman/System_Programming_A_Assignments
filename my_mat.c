@@ -1,6 +1,11 @@
 #include "my_mat.h"
 #include <stdio.h>
 
+/**
+ * @brief 
+ * 
+ * @param mat 
+ */
 void A(int mat[10][10]){
 
     int x;
@@ -18,10 +23,10 @@ int shortestPath(int mat[10][10]){
         for(int i = 0; i < 10; i++){
             for(int j = 0; j < 10; j++){
                 if(i != j){
-                    if(mat[i][j] != 0 && mat[i][k] != 0 && mat[k][j] != 0){
+                    if((mat[i][j] != 0) && (mat[i][k] != 0) && (mat[k][j] != 0)){
                         mat[i][j] = MIN(mat[i][j], (mat[i][k] + mat[k][j]));
                     }
-                    else if(mat[i][k] != 0 && mat[k][j] != 0){
+                    else if((mat[i][k] != 0) && (mat[k][j] != 0)){
                         mat[i][j] = (mat[i][k] + mat[k][j]);
                     }
                 }
