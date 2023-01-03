@@ -1,7 +1,6 @@
 #include<stdio.h>
 #define ARRAY_LENGTH 50
 
-int array[ARRAY_LENGTH] ={0};
 
 int shift_element(int *arr, int i){
     int temp1 , temp2;
@@ -31,7 +30,8 @@ void insertion_sort(int *arr, int len) {
 
 int main(){
 
-    int num;
+    int array[ARRAY_LENGTH];
+    int num = 0;
 
     for(int i = 0; i < ARRAY_LENGTH; i++){
         scanf("%d", &num);
@@ -41,10 +41,10 @@ int main(){
 
     insertion_sort(array, ARRAY_LENGTH);
     
-    for(int i = 0; i < ARRAY_LENGTH; i++){
+    for(int i = 0; i < ARRAY_LENGTH - 1; i++){
         printf("%d,", *(array + i));
     }
-    printf("\n");
+    printf("%d\n", *(array + ARRAY_LENGTH - 1));
 
     return 0;
 }
