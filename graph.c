@@ -27,7 +27,6 @@ void build_graph_cmd(pnode *head){
         }
     }
    }
- }
 }   
 
 pnode findNode(pnode head,int node_num){
