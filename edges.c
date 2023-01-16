@@ -9,7 +9,7 @@ pedge newEdge(int weight, pnode endPoint, pedge nextEdge){
     return e;
 }
 
-void insurtLastEdge(int weight, pnode endPoint, pedge *firstEdge){
+void insertLastEdge(int weight, pnode endPoint, pedge *firstEdge){
     edge **e = firstEdge;
     while (*e)
     {
