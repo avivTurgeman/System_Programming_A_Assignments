@@ -7,5 +7,7 @@
 #include "edges.h"
 
 pnode newNode(int, pnode);
+pnode findNode(pnode, int);
+void delete_node(pnode*, int);
 
 #endif
