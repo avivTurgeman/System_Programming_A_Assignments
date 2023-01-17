@@ -13,7 +13,7 @@ void insert_node_cmd(pnode *head){
     }
 }
 
-void insert_node(pnode *head, int nodeNum){
+void insert_node(pnode* head, int nodeNum){
     node **p = head;
     while(*p){
         p = &((*p)->next);
@@ -59,7 +59,7 @@ void delete_node(pnode* head, int nodeNum){
                     if(prevEdge){
                         prevEdge->next = e->next;
                     } else {
-                        (*v)->edges = e->next
+                        (*v)->edges = e->next;
                     }
                     free(e);
                     goto nextNode;

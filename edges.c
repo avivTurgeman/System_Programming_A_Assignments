@@ -13,7 +13,7 @@ void insertLastEdge(int weight, pnode endPoint, pedge *firstEdge){
     edge **e = firstEdge;
     while (*e)
     {
-        e = &((*e)->next)
+        e = &((*e)->next);
     }
 
     *e = newEdge(weight, endPoint, NULL);

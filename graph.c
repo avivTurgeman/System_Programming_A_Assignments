@@ -1,4 +1,5 @@
 #include "nodes.h"
+
 int graphLen = 0;
 
 // A
