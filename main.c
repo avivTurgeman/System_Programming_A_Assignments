@@ -3,20 +3,29 @@
 
 int main(){
     pnode head = NULL;
-    char choose = '\0';
-    while(scanf("%c", &choose) != EOF){
+    pnode *P_head = &head;
+    char choose = '0';
+    while(choose != EOF){
+        scanf("%c", &choose);
+
         if(choose == 'A'){
-            build_graph_cmd(&head);
+            build_graph_cmd(P_head);
+            head = *P_head;
+        }
+        else if(choose == 'n'){
+            insert_node_n_cmd(P_head);
+            head = *P_head;            
         }
         else if(choose == 'B'){
-            insert_node_cmd(&head);
+            insert_node_cmd(P_head);
+            head = *P_head;
         }
         else if(choose == 'D'){
-            delete_node_cmd(&head);
+            delete_node_cmd(P_head);
+            head = *P_head; 
         }
         else if(choose == 'P'){
-            printGraph_cmd(head);
-            return 0;
+            printGraph_cmd(*P_head);
         }
     }
 }

@@ -16,22 +16,18 @@ void build_graph_cmd(pnode* head){
     for(int i=1; i<numNodes; i++){
         insert_node(head,i);
     } 
+}
 
-    int weight, sourceNode, destNode;
-    char h;
-
-    //Enter the char n followed by the vertic number you wish to start working 
-    //on followed by the the vertic destination of the new edge followed by its weight
-    while(scanf("%c", &h) != EOF){
-        if(h=='n'){
-            scanf("%d", &sourceNode);
-            while(scanf("%d %d", &destNode, &weight) != EOF){
-                pnode currNode = findNode(*head, sourceNode);
-                insertLastEdge(weight, findNode(*head, destNode), &(currNode->edges));
-            }
-        }
+void insert_node_n_cmd(pnode *head){
+    int nodeNum, weight, destNode;
+    
+    scanf("%d", &nodeNum);
+    
+    while(scanf("%d %d", &destNode, &weight) == 2){
+        pnode currNode = findNode(*head, nodeNum);
+        insertLastEdge(weight, findNode(*head, destNode), &(currNode->edges));
     }
-}   
+}
 
 void deleteGraph_cmd(pnode* head){
     while((*head)){
@@ -41,7 +37,7 @@ void deleteGraph_cmd(pnode* head){
 
 void printGraph_cmd(pnode head)
 {
-    printf("Graph representation [src]---(weight)--->[dest]\n");
+    printf("[src]---(weight)--->[dest]\n");
     while (head != NULL)
     {
         pedge current_edge = head->edges;

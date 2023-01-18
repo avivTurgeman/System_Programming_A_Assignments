@@ -7,7 +7,7 @@ void insert_node_cmd(pnode *head){
     scanf("%d", &nodeNum);
     insert_node(head, nodeNum);
     
-    while(scanf("%d %d", &destNode, &weight) != EOF){
+    while(scanf("%d %d", &destNode, &weight) == 2){
         pnode currNode = findNode(*head, nodeNum);
         insertLastEdge(weight, findNode(*head, destNode), &(currNode->edges));
     }
@@ -51,13 +51,17 @@ void delete_node(pnode* head, int nodeNum){
 
     pnode *v = head;
     while(1){
-        if((*v)->node_num != nodeNum){      
+        if((*v)->node_num != nodeNum){
             pedge e = (*v)->edges;
+            if(e->next != NULL){
+            }
             pedge prevEdge = NULL;
             while (e){
                 if(e->endpoint->node_num == nodeNum){
                     if(prevEdge){
                         prevEdge->next = e->next;
+                        if(prevEdge->next == NULL){
+                        }
                     } else {
                         (*v)->edges = e->next;
                     }
@@ -80,20 +84,31 @@ void delete_node(pnode* head, int nodeNum){
     while (*p) {
         if ((*p)->node_num == nodeNum) {
             pedge e = (*p)->edges;
+            if(e->next != NULL){
+            }
             while (e) {
                 pedge temp = e;
                 e = e->next;
                 free(temp);
+                if(e){
+                    if(e->next != NULL){
+                    }
+                }
             }
+            pnode temp;
             if (prevNode) {
+                temp = prevNode->next;
                 prevNode->next = (*p)->next;
             } else {
+                temp = *head;
                 *head = (*p)->next;
             }
-            free(*p);
+            free(temp);
             return;
         }
         prevNode = *p;
         p = &((*p)->next);
+        if((*p)){
+        }
     }
 }
