@@ -1,11 +1,14 @@
 #include "nodes.h"
 
+int graphLen = 0;
+
 // B
 void insert_node_cmd(pnode *head){
     int nodeNum, weight, destNode;
     
     scanf("%d", &nodeNum);
     insert_node(head, nodeNum);
+    graphLen++;
     
     while(scanf("%d %d", &destNode, &weight) == 2){
         pnode currNode = findNode(*head, nodeNum);
@@ -14,17 +17,26 @@ void insert_node_cmd(pnode *head){
 }
 
 void insert_node(pnode* head, int nodeNum){
+    int flag = FALSE;
     node **p = head;
     while(*p){
+        if((*p)->node_num == nodeNum){
+            flag = TRUE;
+        }
         p = &((*p)->next);
     }
-    *p = newNode(nodeNum, NULL);
+
+    if(flag == FALSE){
+        *p = newNode(nodeNum, NULL);
+    }
 }
 
 pnode newNode(int nodeNum, pnode nextNode){
     pnode p = (pnode) malloc(sizeof(node));
     p->node_num = nodeNum; 
     p->next = nextNode;
+    p->dist = INT_MAX;
+    p->prev = NULL;
     return p;
 }
 
@@ -45,12 +57,13 @@ void delete_node_cmd(pnode* head){
     scanf("%d", &nodeNumber);
 
     delete_node(head, nodeNumber);
+    graphLen--;
 }
 
 void delete_node(pnode* head, int nodeNum){
 
     pnode *v = head;
-    while(1){
+    while(TRUE){
         if((*v)->node_num != nodeNum){
             pedge e = (*v)->edges;
             if(e->next != NULL){
@@ -111,4 +124,8 @@ void delete_node(pnode* head, int nodeNum){
         if((*p)){
         }
     }
+}
+
+int get_graph_len(){
+    return graphLen;
 }

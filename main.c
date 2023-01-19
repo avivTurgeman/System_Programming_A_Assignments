@@ -13,7 +13,7 @@ int main(){
             head = *P_head;
         }
         else if(choose == 'n'){
-            insert_node_n_cmd(P_head);
+            insert_node_cmd(P_head);
             head = *P_head;            
         }
         else if(choose == 'B'){
@@ -26,6 +26,12 @@ int main(){
         }
         else if(choose == 'P'){
             printGraph_cmd(*P_head);
+        }
+        else if(choose == 'S'){
+            shortestPath_cmd(head);
+        }
+        else if(choose == 'T'){
+            TSP_cmd(head);
         }
     }
 }

@@ -1,32 +1,19 @@
 #include "nodes.h"
 
-int graphLen = 0;
-
 // A
 void build_graph_cmd(pnode* head){
    if(head != NULL){
         deleteGraph_cmd(head);
    }
-   
-   int numNodes;
-   scanf("%d", &numNodes);
-   graphLen = numNodes;
+
+   int graph_size;
+
+   scanf("%d", &graph_size);
 
     *head = newNode(0,NULL);
-    for(int i=1; i<numNodes; i++){
+    for(int i = 1; i < graph_size; i++){
         insert_node(head,i);
     } 
-}
-
-void insert_node_n_cmd(pnode *head){
-    int nodeNum, weight, destNode;
-    
-    scanf("%d", &nodeNum);
-    
-    while(scanf("%d %d", &destNode, &weight) == 2){
-        pnode currNode = findNode(*head, nodeNum);
-        insertLastEdge(weight, findNode(*head, destNode), &(currNode->edges));
-    }
 }
 
 void deleteGraph_cmd(pnode* head){
