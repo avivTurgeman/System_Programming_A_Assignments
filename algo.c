@@ -4,20 +4,15 @@ void shortestPath_cmd(pnode head){
     int start, dest;
     scanf("%d %d", &start, &dest);
     pnode Pstart = findNode(head, start);
-    // pnode Pdest = findNode(head, dest);
-    // pnode *p = &head;
+    pnode Pdest = findNode(head, dest);
+    pnode *p = &head;
     dijkstra(head, Pstart);
-
-    // while (*p){
-    //     printf("Dijsktra shortest path from node %d to node %d: %d\n",Pstart->node_num,(*p)->node_num, (*p)->dist);
-    //     p = &((*p)->next);
-    // }
     
-    // if (Pdest->prev == NULL) {
-    //     printf("Dijsktra shortest path: -1\n");
-    // } else {
-    //     printf("Dijsktra shortest path: %d\n", Pdest->dist);
-    // }
+    if (Pdest->prev == NULL) {
+        printf("Dijsktra shortest path: -1\n");
+    } else {
+        printf("Dijsktra shortest path: %d\n", Pdest->dist);
+    }
 }
 
 void TSP_cmd(pnode head){
@@ -58,11 +53,11 @@ void dijkstra(pnode head, pnode start) {
     }
     start->dist = 0;
     printf("pair pushed node_num: %d\n", start->node_num);
-    push(q,start->node_num,start->dist);
+    push(q,start->node_num,0);
     while (!is_empty(q)) {
         pair *p = pop(q);
         pnode u = findNode(head, p->node_num);
-        printf("q->pop = %d, q->dist = %d\n", u->node_num, p->dist);
+        printf("q->pop = %d, q->dist = %d\n", p->node_num, p->dist);
         pedge e = u->edges;
         while (e != NULL) {
             relax(u, e);
@@ -74,14 +69,8 @@ void dijkstra(pnode head, pnode start) {
 
 void relax(pnode u, pedge e){
     pnode v = e->endpoint;
-    // printf("\n*************************relax***************************************\n\n");
-    // printf("node %d->dist = %d\n", e->endpoint->node_num, e->endpoint->dist);
-    // printf("node %d->dist = %d\n",u->node_num, u->dist);
-    // printf("[X]---(%d)--->[%d]\n",e->weight,e->endpoint->node_num);
     if ((v->dist) > (u->dist + e->weight)) {
         v->dist = (u->dist + e->weight);
         v->prev = u;
-        // printf("Dijsktra shortest path from node %d to node %d: %d\n",u->node_num,e->endpoint->node_num, e->endpoint->dist);
     }
-    // printf("\n**********************************************************************\n");
 }
